@@ -1,5 +1,7 @@
 package data.entity;
 
+import javafx.beans.property.SimpleStringProperty;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -64,6 +66,10 @@ public class Student {
     public SchoolClass getSchoolClass() { return schoolClass; }
 
     public Timestamp getNarDate() { return narDate; }
+
+    public SimpleStringProperty getStringProperty() {
+        return new SimpleStringProperty(fam + " " + name + " " + otch);
+    }
 
     @Override
     public String toString() {

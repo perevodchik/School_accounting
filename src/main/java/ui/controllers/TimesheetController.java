@@ -8,7 +8,7 @@ import data.entity.Discipline;
 import data.entity.Point;
 import data.entity.SchoolClass;
 import data.entity.Student;
-import data.util.StudentPoints;
+import data.entity.other.StudentPoints;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +23,8 @@ import java.util.Set;
 public class TimesheetController {
     private List<SchoolClass> classList;
     private List<Student> studentList;
+    private SchoolClass currentClass;
+    private Student currentStudent;
 
     @FXML
     private JFXComboBox<String> classListView;
@@ -43,14 +45,12 @@ public class TimesheetController {
     @FXML
     protected void initialize()
     {
-        studentListView.setDisable(true);
-
         SchoolClassDao schoolClassDao = new SchoolClassDao();
         classList = schoolClassDao.getAll();
+        timesheetTable.setEditable(true);
 
         classList.forEach(c -> {
             classListView.getItems().add(c.getName());
-            System.out.println(c.getName());
         });
 
         disciplineNameColumn.setCellValueFactory(cellData -> cellData.getValue().getDiscipline());
@@ -60,35 +60,42 @@ public class TimesheetController {
     }
 
     public void changeSchoolClass(ActionEvent actionEvent) {
+        currentStudent = null;
+        currentClass = classList.get(classListView.getSelectionModel().getSelectedIndex());
+
         studentListView.getItems().clear();
-        studentListView.setDisable(false);
-        studentList = new StudentDao().
-                getFromSchoolClass(classList.get(classListView.getSelectionModel().getSelectedIndex()));
+
+        studentList = new StudentDao().getFromSchoolClass(currentClass);
+
         if(!studentList.isEmpty()) {
             studentList.forEach(s -> studentListView.getItems().add(s.getFam() + " " + s.getName() + " " + s.getOtch()));
-        } else studentListView.setDisable(true);
+        }
     }
 
     public void setTimesheet(ActionEvent actionEvent) {
-        Student studnt = studentList.get(studentListView.getSelectionModel().getSelectedIndex());
-        Set<Discipline> disciplineList = classList.get(classListView.getSelectionModel().getSelectedIndex()).getClassDiscipline();
-        List<StudentPoints> pointList = new ArrayList<>();
+        if(studentListView.getItems().size() == studentList.size()) {
+            currentStudent = studentList.get(
+                    studentListView.getSelectionModel().getSelectedIndex());
+            Set<Discipline> disciplineList = currentClass.getClassDiscipline();
+            List<StudentPoints> pointList = new ArrayList<>();
 
-        for(Discipline d: disciplineList) {
-            pointList.add(new StudentPoints(d.getName(),
-                    getSemestrPoint(1, studnt, d),
-                    getSemestrPoint(2, studnt, d)));
+            for (Discipline d : disciplineList) {
+                pointList.add(new StudentPoints(d.getName(),
+                        getSemestrPoint(1, currentStudent, d),
+                        getSemestrPoint(2, currentStudent, d)));
+            }
+
+            timesheetTable.getItems().clear();
+            ObservableList<StudentPoints> sp = FXCollections.observableArrayList(pointList);
+            timesheetTable.getItems().addAll(sp);
         }
-
-        timesheetTable.getItems().clear();
-        ObservableList<StudentPoints> sp = FXCollections.observableArrayList(pointList);
-        timesheetTable.getItems().addAll(sp);
     }
 
     private float getSemestrPoint(int semestr, Student student, Discipline discipline) {
         float c=0;
         PointDao pointDao = new PointDao();
         List<Point> pointList = pointDao.getStudentPointWithDiscipline(student, discipline, semestr);
+
         for(Point p: pointList)
         {
             c+= p.getValue();

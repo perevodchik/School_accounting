@@ -41,7 +41,7 @@ public class ReasonDao {
         session.close();
     }
 
-    public List<Reason> getAll()
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From reason").list();
     }

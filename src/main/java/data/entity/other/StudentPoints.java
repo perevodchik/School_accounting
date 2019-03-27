@@ -1,4 +1,4 @@
-package data.util;
+package data.entity.other;
 
 import javafx.beans.property.SimpleStringProperty;
 
@@ -14,7 +14,7 @@ public class StudentPoints {
         this.discipline = new SimpleStringProperty(discipline);
         this.firstSemestr = new SimpleStringProperty(firstSemestr.toString());
         this.secondSemestr = new SimpleStringProperty(secondSemestr.toString());
-        yearsAwrg = new SimpleStringProperty(String.valueOf((firstSemestr+secondSemestr)/2));
+        this.yearsAwrg = new SimpleStringProperty(String.valueOf((firstSemestr+secondSemestr)/2));
     }
 
     public SimpleStringProperty getDiscipline() { return discipline; }

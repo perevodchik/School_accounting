@@ -2,8 +2,12 @@ package data.dao;
 
 import data.HibernateSessionFactoryUtil;
 import data.entity.Discipline;
+import data.entity.SchoolClass;
+import data.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
@@ -40,7 +44,14 @@ public class DisciplineDao {
             session.close();
         }
 
-        public List<Discipline> getAll()
+        public List getBySchoolClass(SchoolClass schoolClass)
+        {
+            DetachedCriteria criteria = DetachedCriteria.forClass(Discipline.class);
+            criteria.add(Restrictions.eq("schoolClass", schoolClass));
+            return criteria.getExecutableCriteria(HibernateSessionFactoryUtil.getSessionFactory().openSession()).list();
+        }
+
+        public List getAll()
         {
             return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From discipline").list();
         }

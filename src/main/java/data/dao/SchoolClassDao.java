@@ -1,13 +1,9 @@
 package data.dao;
 
 import data.HibernateSessionFactoryUtil;
-import data.entity.Discipline;
 import data.entity.SchoolClass;
-import data.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
@@ -45,7 +41,7 @@ public class SchoolClassDao {
         session.close();
     }
 
-    public List<SchoolClass> getAll()
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From classes").list();
     }

@@ -21,6 +21,8 @@ public class MainController {
     @FXML
     private JFXButton fbtn2;
     @FXML
+    private JFXButton fbtn3;
+    @FXML
     private BorderPane mainPane;
 
     private JFXButton activeBtn;
@@ -38,6 +40,12 @@ public class MainController {
     public void setTimesheet(ActionEvent actionEvent) {
         loadUI("timesheet");
         setActibeBtn(activeBtn, fbtn2);
+    }
+
+    @FXML
+    public void setShedule(ActionEvent actionEvent) {
+        loadUI("schedule");
+        setActibeBtn(activeBtn, fbtn3);
     }
 
     @FXML
@@ -64,4 +72,5 @@ public class MainController {
         }
         mainPane.setCenter(root);
     }
+
 }

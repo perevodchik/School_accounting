@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
-import java.util.Set;
 
 public class TeacherDao {
 
@@ -42,7 +41,7 @@ public class TeacherDao {
         session.close();
     }
 
-    public List<Teacher> getAll()
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From teachers").list();
     }

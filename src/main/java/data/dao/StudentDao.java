@@ -44,13 +44,13 @@ public class StudentDao {
         session.close();
     }
 
-    public List<Student> getFromSchoolClass(SchoolClass schoolClass) {
+    public List getFromSchoolClass(SchoolClass schoolClass) {
         DetachedCriteria criteria = DetachedCriteria.forClass(Student.class);
         criteria.add(Restrictions.eq("schoolClass", schoolClass));
         return criteria.getExecutableCriteria(HibernateSessionFactoryUtil.getSessionFactory().openSession()).list();
     }
 
-    public List<Student> getAll()
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From students").list();
     }

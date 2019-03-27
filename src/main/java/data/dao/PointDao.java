@@ -3,6 +3,7 @@ package data.dao;
 import data.HibernateSessionFactoryUtil;
 import data.entity.Discipline;
 import data.entity.Point;
+import data.entity.SchoolClass;
 import data.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -45,7 +46,7 @@ public class PointDao {
         session.close();
     }
 
-    public List<Point> getStudentPointWithDiscipline(Student student, Discipline discipline, int semestr)
+    public List getStudentPointWithDiscipline(Student student, Discipline discipline, int semestr)
     {
         DetachedCriteria criteria = DetachedCriteria.forClass(Point.class);
         criteria.add(Restrictions.eq("student", student));
@@ -54,7 +55,16 @@ public class PointDao {
         return criteria.getExecutableCriteria(HibernateSessionFactoryUtil.getSessionFactory().openSession()).list();
     }
 
-    public List<Point> getAll()
+    public List getPointWithDay(Student student, Discipline discipline, java.sql.Date date, SchoolClass schoolClass)
+    {
+        DetachedCriteria criteria = DetachedCriteria.forClass(Point.class);
+        criteria.add(Restrictions.eq("student", student));
+        criteria.add(Restrictions.eq("discipline", discipline));
+        criteria.add(Restrictions.eq("date", date));
+        return criteria.getExecutableCriteria(HibernateSessionFactoryUtil.getSessionFactory().openSession()).list();
+    }
+
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From points").list();
     }

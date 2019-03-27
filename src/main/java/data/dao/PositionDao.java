@@ -41,7 +41,7 @@ public class PositionDao {
         session.close();
     }
 
-    public List<Position> getAll()
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From position").list();
     }

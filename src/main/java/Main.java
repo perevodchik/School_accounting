@@ -6,11 +6,13 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.stage.StageStyle;
 
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main extends Application {
-    private double x, y;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public static void main(String[] args)
     {
@@ -23,16 +25,16 @@ public class Main extends Application {
         Scene scene = new Scene(root);
 
         root.setOnMousePressed(event -> {
-            x = event.getSceneX();
-            y = event.getSceneY();
+            xOffset = primaryStage.getX() - event.getScreenX();
+            yOffset = primaryStage.getY() - event.getScreenY();
         });
 
         root.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getSceneX() - x);
-            primaryStage.setY(event.getSceneY() - y);
+            primaryStage.setX(event.getScreenX() + xOffset);
+            primaryStage.setY(event.getScreenY() + yOffset);
         });
 
-        //primaryStage.initStyle(StageStyle.TRANSPARENT);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setMaximized(false);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -40,8 +42,10 @@ public class Main extends Application {
 
         Thread t1 = new Thread(new Main.initThread(), "Init thread");
         t1.start();
-    }
 
+        Calendar calendar = new GregorianCalendar();
+
+    }
 
     private class initThread implements Runnable {
         private Logger log = Logger.getLogger(initThread.class.getName());
