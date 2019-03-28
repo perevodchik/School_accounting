@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="addStudentModalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0"
+            prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.controllers.AddStudentModalController">
+   <JFXButton fx:id="addStudentBtn" layoutX="22.0" layoutY="186.0" text="Прийняти" onAction="#handleButtonClicks"/>
+   <JFXButton fx:id="cancelBtn" layoutX="152.0" layoutY="186.0" text="Відмінити" onAction="#handleButtonClicks"/>
+   <JFXComboBox fx:id="schoolClassComboBox" layoutX="239.0" layoutY="26.0" prefHeight="25.0" prefWidth="140.0"
+                promptText="Клас"/>
+   <JFXTextField fx:id="nameValueField" layoutX="22.0" layoutY="26.0" prefHeight="25.0" prefWidth="180.0"
+                 promptText="Імя"/>
+   <JFXTextField fx:id="famValueField" layoutX="22.0" layoutY="67.0" prefHeight="25.0" prefWidth="180.0"
+                 promptText="Прізвище"/>
+   <JFXTextField fx:id="otchValueField" layoutX="22.0" layoutY="113.0" prefHeight="25.0" prefWidth="180.0"
+                 promptText="По батькові"/>
+   <DatePicker fx:id="birthday" layoutX="239.0" layoutY="67.0" prefHeight="25.0" prefWidth="140.0"
+               promptText="Дата народження"/>
+</AnchorPane>

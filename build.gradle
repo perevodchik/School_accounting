@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = 'M'
+}
+
+group 'com.perevodchik'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.1.Final'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+    compile group: 'joda-time', name: 'joda-time', version: '2.3' // for date
+    compile 'com.jfoenix:jfoenix:8.0.8' // for Java 8
+    compile group: 'de.jensd', name: 'fontawesomefx', version: '8.9' // icons
+
+}
+
+jar {
+    // Keep jar clean:
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
+
+    manifest {
+        attributes "Main-Class": "Main"
+    }
+}
