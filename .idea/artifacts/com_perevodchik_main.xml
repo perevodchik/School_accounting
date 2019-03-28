@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="com.perevodchik.main">
+    <output-path>$PROJECT_DIR$/out/artifacts/com_perevodchik_main</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="com_perevodchik_com_perevodchik_main.jar">
+        <element id="module-output" name="com.perevodchik.com.perevodchik.main" />
+      </element>
+    </root>
+  </artifact>
+</component>

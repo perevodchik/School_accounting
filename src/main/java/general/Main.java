@@ -1,4 +1,5 @@
-import data.HibernateSessionFactoryUtil;
+package general;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,8 +7,6 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.stage.StageStyle;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Main extends Application {
     private double xOffset = 0;
@@ -20,9 +19,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/home.fxml"));
         Scene scene = new Scene(root);
-
 
         root.setOnMousePressed(event -> {
             xOffset = primaryStage.getX() - event.getScreenX();
@@ -39,19 +37,5 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setTitle("Облік успішності");
-
     }
-
-    private class initThread implements Runnable {
-        private Logger log = Logger.getLogger(initThread.class.getName());
-
-        @Override
-        public void run() {
-            log.log(Level.INFO, Thread.currentThread().getName() + " started...");
-            HibernateSessionFactoryUtil.getSessionFactory();
-            log.log(Level.INFO, Thread.currentThread().getName() + " stopped...");
-        }
-
-    }
-
 }

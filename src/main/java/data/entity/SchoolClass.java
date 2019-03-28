@@ -39,5 +39,5 @@ public class SchoolClass {
     public void setClassDiscipline(Set<Discipline> classDiscipline) {this.classDiscipline = classDiscipline;}
 
     @Override
-    public String toString() {return "id = [ "+id+" ], name = [ "+name+" ], class discipline = { " + classDiscipline.toString() + " }";}
+    public String toString() {return name;}
 }

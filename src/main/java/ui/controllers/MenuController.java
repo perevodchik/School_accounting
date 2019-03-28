@@ -32,11 +32,11 @@ public class MenuController {
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
         if (mouseEvent.getSource() == btnClasses) {
-            loadUI("classes");
+            //loadUI("classes");
         } else if (mouseEvent.getSource() == btnSchedule) {
             loadUI("schedule");
         } else if (mouseEvent.getSource() == btnSettings) {
-            loadUI("settings");
+            //loadUI("settings");
         } else if (mouseEvent.getSource() == btnTimetable) {
             loadUI("timetable");
         } else if (mouseEvent.getSource() == btnStudents) {
@@ -49,8 +49,7 @@ public class MenuController {
     private void loadUI(String ui) {
         Parent root = null;
         try {
-            String path = "/fxml/" + ui + ".fxml";
-            root = FXMLLoader.load(getClass().getResource(path));
+            root = FXMLLoader.load(getClass().getResource("/fxml/" + ui + ".fxml"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

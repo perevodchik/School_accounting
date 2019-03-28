@@ -1,10 +1,7 @@
-plugins {
-    id 'java'
-    id 'application'
-}
+apply plugin: 'java'
 
 application {
-    mainClassName = 'M'
+    mainClassName = 'Main'
 }
 
 group 'com.perevodchik'
@@ -21,7 +18,7 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.1.Final'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
     compile group: 'joda-time', name: 'joda-time', version: '2.3' // for date
-    compile 'com.jfoenix:jfoenix:8.0.8' // for Java 8
+    compile group: 'com.jfoenix', name: 'jfoenix', version: '8.0.8' // material design fx controls
     compile group: 'de.jensd', name: 'fontawesomefx', version: '8.9' // icons
 
 }

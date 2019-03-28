@@ -1,6 +1,5 @@
 package ui.controllers;
 
-import data.HibernateSessionFactoryUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,8 +9,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MainController {
     public AnchorPane parentPane;
@@ -23,7 +20,7 @@ public class MainController {
 
     @FXML
     protected void initialize() {
-        loadUI("menu");
+        loadUI();
         //HibernateSessionFactoryUtil.getSessionFactory();
         MenuController.setParentPane(parentPane);
     }
@@ -35,39 +32,25 @@ public class MainController {
 
 
     public void goToMenu(MouseEvent mouseEvent) {
-        loadUI("menu");
+        loadUI();
     }
 
-    private void loadUI(String ui) {
+    private void loadUI() {
         Parent root = null;
-        try
-        {
-            String path = "/fxml/" + ui + ".fxml";
-            root = FXMLLoader.load(getClass().getResource(path));
-        } catch(
-        IOException e)
-
-        {
-            System.out.println(e.getMessage());
-        }
-        if(parentPane.getChildren().size() < 2) {
-            parentPane.getChildren().add(root);
-        } else parentPane.getChildren().set(1, root);
-        AnchorPane.setTopAnchor(root,170.0);
-        AnchorPane.setLeftAnchor(root,150.0);
-        AnchorPane.setRightAnchor(root,150.0);
-        AnchorPane.setBottomAnchor(root,50.0);
-    }
-
-    public class initThread implements Runnable {
-        private Logger log = Logger.getLogger(MainController.initThread.class.getName());
-
-        @Override
-        public void run() {
-            log.log(Level.INFO, Thread.currentThread().getName() + " started...");
-            HibernateSessionFactoryUtil.getSessionFactory();
-            log.log(Level.INFO, Thread.currentThread().getName() + " stopped...");
+        try {
+            root = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        if(root != null) {
+            if (parentPane.getChildren().size() < 2) {
+                parentPane.getChildren().add(root);
+            } else parentPane.getChildren().set(1, root);
+            AnchorPane.setTopAnchor(root, 170.0);
+            AnchorPane.setLeftAnchor(root, 150.0);
+            AnchorPane.setRightAnchor(root, 150.0);
+            AnchorPane.setBottomAnchor(root, 50.0);
+        } else System.out.println("root == null");
     }
 }
