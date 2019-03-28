@@ -1,6 +1,5 @@
 package data.entity.other;
 
-import com.sun.istack.internal.Nullable;
 import data.entity.LessonSchedule;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -8,7 +7,6 @@ import javafx.collections.ObservableList;
 
 
 public class Schedule {
-    @Nullable
     private ObservableList<LessonSchedule> lessons = FXCollections.observableArrayList();
     private int lessonNumber;
 

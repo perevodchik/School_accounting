@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.stage.StageStyle;
 
-import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,8 +20,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/UI_fxml/main_screen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/home.fxml"));
         Scene scene = new Scene(root);
+
 
         root.setOnMousePressed(event -> {
             xOffset = primaryStage.getX() - event.getScreenX();
@@ -39,11 +39,6 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setTitle("Облік успішності");
-
-        Thread t1 = new Thread(new Main.initThread(), "Init thread");
-        t1.start();
-
-        Calendar calendar = new GregorianCalendar();
 
     }
 

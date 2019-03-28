@@ -3,7 +3,6 @@ package ui.modal;
 import data.entity.LessonSchedule;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import ui.controllers.ScheduleRedactorModalController;
@@ -20,16 +19,13 @@ public class ScheduleRedactorModal implements IModal {
     public Stage showModal() {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
-                        "/UI_fxml/scheduleRedactorModal.fxml"
+                        "/fxml/scheduleRedactorModal.fxml"
                 )
         );
 
         Stage stage = new Stage(StageStyle.UNDECORATED);
         try {
-            stage.setScene(
-                    new Scene(
-                            (Pane) loader.load()
-                    )
+            stage.setScene(new Scene(loader.load())
             );
         } catch (IOException e) {
             e.printStackTrace();
