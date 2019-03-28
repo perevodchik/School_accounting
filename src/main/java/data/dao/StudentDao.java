@@ -44,7 +44,7 @@ public class StudentDao {
         session.close();
     }
 
-    public List getFromSchoolClass(SchoolClass schoolClass) {
+    public List<Student> getFromSchoolClass(SchoolClass schoolClass) {
         DetachedCriteria criteria = DetachedCriteria.forClass(Student.class);
         criteria.add(Restrictions.eq("schoolClass", schoolClass));
         return criteria.getExecutableCriteria(HibernateSessionFactoryUtil.getSessionFactory().openSession()).list();

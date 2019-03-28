@@ -27,7 +27,7 @@
          <JFXComboBox fx:id="studentListView" onAction="#setTimesheet" prefHeight="25.0" prefWidth="150.0"/>
       </VBox>
    </HBox>
-   <TableView fx:id="timesheetTable" prefHeight="700.0" prefWidth="1150.0">
+   <TableView fx:id="timesheetTable" prefHeight="675.0" prefWidth="1150.0" stylesheets="@../css/fullpackstyling.css">
       <columns>
          <TableColumn fx:id="disciplineNameColumn" prefWidth="75.0" text="Назва предмету"/>
          <TableColumn fx:id="firstSemestrColumn" prefWidth="75.0" text="1 семестр"/>

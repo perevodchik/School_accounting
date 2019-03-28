@@ -41,7 +41,7 @@ public class SchoolClassDao {
         session.close();
     }
 
-    public List getAll()
+    public List<SchoolClass> getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From classes").list();
     }

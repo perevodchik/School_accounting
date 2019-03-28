@@ -42,5 +42,6 @@
          <JFXComboBox fx:id="monthListView" onAction="#changeMonth" prefHeight="25.0" prefWidth="150.0"/>
       </VBox>
    </HBox>
-   <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0"/>
+   <TableView fx:id="tableView" prefHeight="675.0" prefWidth="1150.0" stylesheets="@../css/fullpackstyling.css">
+   </TableView>
 </VBox>

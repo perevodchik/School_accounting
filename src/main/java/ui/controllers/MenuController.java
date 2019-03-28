@@ -59,6 +59,6 @@ public class MenuController {
         AnchorPane.setTopAnchor(root, 170.0);
         AnchorPane.setLeftAnchor(root, 150.0);
         AnchorPane.setRightAnchor(root, 150.0);
-        AnchorPane.setBottomAnchor(root, 50.0);
+        AnchorPane.setBottomAnchor(root, 5.0);
     }
 }
