@@ -44,10 +44,11 @@ public class DisciplineDao {
             session.close();
         }
 
-        public List getBySchoolClass(SchoolClass schoolClass)
+        public List getWithoutSchoolClassDiscipline(SchoolClass schoolClass)
         {
             DetachedCriteria criteria = DetachedCriteria.forClass(Discipline.class);
-            criteria.add(Restrictions.eq("schoolClass", schoolClass));
+            //criteria.add(Restrictions.eq("schoolClass", schoolClass));
+            criteria.add(Restrictions.not(Restrictions.in("schoolClass", schoolClass.getClassDiscipline())));
             return criteria.getExecutableCriteria(HibernateSessionFactoryUtil.getSessionFactory().openSession()).list();
         }
 

@@ -27,6 +27,7 @@
          <JFXComboBox fx:id="disciplineListView" onAction="#changeDiscipline" prefHeight="25.0"
                       prefWidth="150.0"/>
       </VBox>
+      <!--
       <VBox prefHeight="200.0" prefWidth="150.0">
          <HBox.margin>
             <Insets right="20.0"/>
@@ -34,6 +35,7 @@
          <Label text="Виберіть рік"/>
          <JFXComboBox fx:id="yearListView" onAction="#changeYear" prefHeight="25.0" prefWidth="150.0"/>
       </VBox>
+      -->
       <VBox prefHeight="200.0" prefWidth="150.0">
          <HBox.margin>
             <Insets right="20.0"/>

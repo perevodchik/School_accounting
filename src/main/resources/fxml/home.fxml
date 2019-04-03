@@ -20,12 +20,12 @@
                 <Font size="13.0"/>
             </font>
         </Label>
-        <ImageView onMouseClicked="#close" fitHeight="25.0" fitWidth="25.0" layoutX="1174.0"
-                   layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1174.0" layoutY="2.0" onMouseClicked="#close"
+                   pickOnBounds="true" preserveRatio="true">
             <Image url="@../img/close.png"/>
         </ImageView>
-        <ImageView onMouseClicked="#goToMenu" fitHeight="38.0" fitWidth="20.0" layoutX="4.0"
-                   layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="38.0" fitWidth="20.0" layoutX="4.0" layoutY="5.0" onMouseClicked="#goToMenu"
+                   pickOnBounds="true" preserveRatio="true">
             <Image url="@../img/left.png"/>
         </ImageView>
     </Pane>

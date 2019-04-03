@@ -1,27 +1,24 @@
 package ui.modal;
 
-import data.entity.Point;
+import data.entity.SchoolClass;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import ui.controllers.AddPointModalController;
+import ui.controllers.SchoolClassRedactorModalController;
 
 import java.io.IOException;
 
-public class AddPointModal implements IModal {
-    private Point point;
-    private int currentMonth;
+public class ChangeSchoolClassModal implements ui.modal.IModal {
+    private SchoolClass schoolClass;
 
-    public AddPointModal(Point point, int currentMonth) {
-        this.currentMonth = currentMonth;
-        this.point = point;
-    }
+    public ChangeSchoolClassModal(SchoolClass schoolClass) { this.schoolClass = schoolClass; }
 
+    @Override
     public Stage showModal() {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
-                        "/fxml/addPointModal.fxml"
+                        "/fxml/changeSchoolClassModal.fxml"
                 )
         );
 
@@ -33,12 +30,13 @@ public class AddPointModal implements IModal {
             e.printStackTrace();
         }
 
-        AddPointModalController controller =
+        SchoolClassRedactorModalController controller =
                 loader.getController();
-        controller.initData(point, currentMonth);
+        controller.initData(schoolClass);
 
         stage.show();
 
         return stage;
     }
+
 }

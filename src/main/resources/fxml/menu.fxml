@@ -3,9 +3,8 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.control.Button?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <GridPane prefWidth="1150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="ui.controllers.MenuController">
+          fx:controller="ui.controllers.MenuController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -17,45 +16,27 @@
     </rowConstraints>
     <Button fx:id="btnZhurnal" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks"
             prefHeight="181.0" prefWidth="242.0" stylesheets="@../css/fullpackstyling.css" text="Журнал">
-        <graphic>
-            <FontAwesomeIconView fill="#2d75e8" glyphName="BOOK" size="50"/>
-        </graphic>
     </Button>
     <Button fx:id="btnStudents" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks"
             prefHeight="181.0" prefWidth="242.0" stylesheets="@../css/fullpackstyling.css" text="Учні"
             GridPane.columnIndex="1">
-        <graphic>
-            <FontAwesomeIconView fill="#2d75e8" glyphName="GROUP" size="50"/>
-        </graphic>
     </Button>
     <Button fx:id="btnTimetable" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks"
             prefHeight="181.0" prefWidth="242.0" stylesheets="@../css/fullpackstyling.css" text="Табелі"
             GridPane.columnIndex="2">
-        <graphic>
-            <FontAwesomeIconView fill="#2d75e8" glyphName="FILE_ALT" size="50"/>
-        </graphic>
     </Button>
     <Button fx:id="btnSettings" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
             prefWidth="242.0" onAction="#handleButtonClicks"
             stylesheets="@../css/fullpackstyling.css" text="Налаштування" GridPane.columnIndex="2"
             GridPane.rowIndex="1">
-        <graphic>
-            <FontAwesomeIconView fill="#2d75e8" glyphName="SLIDERS" size="50"/>
-        </graphic>
     </Button>
     <Button fx:id="btnSchedule" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
             prefWidth="242.0" onAction="#handleButtonClicks"
             stylesheets="@../css/fullpackstyling.css" text="Розклад" GridPane.columnIndex="1"
             GridPane.rowIndex="1">
-        <graphic>
-            <FontAwesomeIconView fill="#2d75e8" glyphName="CLIPBOARD" size="50"/>
-        </graphic>
     </Button>
     <Button fx:id="btnClasses" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
             prefWidth="242.0" onAction="#handleButtonClicks"
             stylesheets="@../css/fullpackstyling.css" text="Classes" GridPane.rowIndex="1">
-        <graphic>
-            <FontAwesomeIconView fill="#2d75e8" glyphName="GRADUATION_CAP" size="50"/>
-        </graphic>
     </Button>
 </GridPane>

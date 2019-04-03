@@ -17,8 +17,8 @@
             <JFXComboBox fx:id="schoolClassList" onAction="#setCurrentClass" prefHeight="25.0"
                          prefWidth="150.0"/>
         </VBox>
-    </HBox><![CDATA[
-    ]]><TableView fx:id="studentTable" prefHeight="675.0" prefWidth="1150.0" stylesheets="@../css/fullpackstyling.css">
+    </HBox>
+    <TableView fx:id="studentTable" prefHeight="675.0" prefWidth="1150.0" stylesheets="@../css/fullpackstyling.css">
         <columns>
             <TableColumn fx:id="studentName" prefWidth="75.0" text="Імя"/>
             <TableColumn fx:id="studentFam" prefWidth="75.0" text="Прізвище"/>
