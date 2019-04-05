@@ -5,6 +5,7 @@ import data.entity.SchoolClass;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class SchoolClassDao {
@@ -32,6 +33,7 @@ public class SchoolClassDao {
         session.close();
     }
 
+    @Transactional
     public void delete(SchoolClass c)
     {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -41,7 +43,7 @@ public class SchoolClassDao {
         session.close();
     }
 
-    public List<SchoolClass> getAll()
+    public List getAll()
     {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From classes").list();
     }

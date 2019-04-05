@@ -7,11 +7,11 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class AddStudentModal implements IModal{
+public class AddSchoolClassModal implements IModal{
     public Stage showModal() {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
-                        "/fxml/addStudentModal.fxml"
+                        "/fxml/addSchoolClassModal.fxml"
                 )
         );
 

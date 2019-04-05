@@ -26,6 +26,7 @@ public class HibernateSessionFactoryUtil {
 
     private static void initAnnotatedClasses(Configuration configuration)
     {
+        configuration.addAnnotatedClass(ClassDiscipline.class);
         configuration.addAnnotatedClass(Discipline.class);
         configuration.addAnnotatedClass(LessonSchedule.class);
         configuration.addAnnotatedClass(Point.class);

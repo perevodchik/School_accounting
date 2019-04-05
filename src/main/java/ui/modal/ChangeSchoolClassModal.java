@@ -12,9 +12,12 @@ import java.io.IOException;
 public class ChangeSchoolClassModal implements ui.modal.IModal {
     private SchoolClass schoolClass;
 
-    public ChangeSchoolClassModal(SchoolClass schoolClass) { this.schoolClass = schoolClass; }
+    //public ChangeSchoolClassModal(SchoolClass schoolClass) { this.schoolClass = schoolClass; }
 
-    @Override
+    public ChangeSchoolClassModal(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
+    }
+
     public Stage showModal() {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
