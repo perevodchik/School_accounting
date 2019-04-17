@@ -11,7 +11,7 @@ public class PointList{
     private Map<Integer, Point> pointMap = new HashMap<>();
 
     public int getSum() {
-        return pointMap.entrySet().stream().mapToInt(e -> e.getValue().getValue()).sum();
+        return pointMap.entrySet().stream().filter(e -> !e.getValue().getValue().equals("n")).mapToInt(e -> Integer.valueOf(e.getValue().getValue())).sum();
     }
 
     private int getCount() {return pointMap.size(); }

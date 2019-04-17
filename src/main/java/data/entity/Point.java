@@ -12,7 +12,7 @@ public class Point {
     private int id;
 
     @Column(name="val")
-    private int value;
+    private String value;
 
     @Column(name="semestr")
     private int semestr;
@@ -35,13 +35,13 @@ public class Point {
     public Point() {}
 
     public Point(int semestr, Discipline discipline, Student student) {
-        this.value = -1;
+        this.value = "";
         this.semestr = semestr;
         this.discipline = discipline;
         this.student = student;
     }
 
-    public Point(int id, int value, int semestr, Discipline discipline, Student student, Reason reason, Date date) {
+    public Point(int id, String value, int semestr, Discipline discipline, Student student, Reason reason, Date date) {
         this.id = id;
         this.value = value;
         this.semestr = semestr;
@@ -52,14 +52,14 @@ public class Point {
     }
 
     public int getSemestr() { return semestr; }
-    public int getValue() { return value; }
+    public String getValue() { return value; }
     public Discipline getDiscipline() { return discipline; }
     public Student getStudent() { return student; }
     public Reason getReason() { return reason; }
     public Date getDate() { return date; }
 
     public void setSemestr(int semestr) { this.semestr = semestr; }
-    public void setValue(int value) { this.value = value; }
+    public void setValue(String value) { this.value = value; }
     public void setDiscipline(Discipline discipline) { this.discipline = discipline; }
     public void setStudent(Student student) { this.student = student; }
     public void setReason(Reason reason) { this.reason = reason; }
