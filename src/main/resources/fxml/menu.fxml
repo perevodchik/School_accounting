@@ -25,9 +25,9 @@
             prefHeight="181.0" prefWidth="242.0" stylesheets="@../css/fullpackstyling.css" text="Табелі"
             GridPane.columnIndex="2">
     </Button>
-    <Button fx:id="btnSettings" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
+    <Button fx:id="btnDiscipline" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
             prefWidth="242.0" onAction="#handleButtonClicks"
-            stylesheets="@../css/fullpackstyling.css" text="Налаштування" GridPane.columnIndex="2"
+            stylesheets="@../css/fullpackstyling.css" text="Дисципліни" GridPane.columnIndex="2"
             GridPane.rowIndex="1">
     </Button>
     <Button fx:id="btnSchedule" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
@@ -37,6 +37,6 @@
     </Button>
     <Button fx:id="btnClasses" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0"
             prefWidth="242.0" onAction="#handleButtonClicks"
-            stylesheets="@../css/fullpackstyling.css" text="Classes" GridPane.rowIndex="1">
+            stylesheets="@../css/fullpackstyling.css" text="Класи" GridPane.rowIndex="1">
     </Button>
 </GridPane>

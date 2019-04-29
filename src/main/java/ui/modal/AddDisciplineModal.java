@@ -10,13 +10,13 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class AddSchoolClassModal implements IModal{
+public class AddDisciplineModal implements IModal {
 
     @Override
     public Stage showModal(Node node) {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
-                        "/fxml/addSchoolClassModal.fxml"
+                        "/fxml/addDisciplineModal.fxml"
                 )
         );
 

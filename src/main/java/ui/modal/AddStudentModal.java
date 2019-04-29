@@ -1,14 +1,18 @@
 package ui.modal;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
 public class AddStudentModal implements IModal{
-    public Stage showModal() {
+
+    @Override
+    public Stage showModal(Node node) {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
                         "/fxml/addStudentModal.fxml"
@@ -23,6 +27,8 @@ public class AddStudentModal implements IModal{
             e.printStackTrace();
         }
 
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(node.getScene().getWindow());
         stage.show();
 
         return stage;

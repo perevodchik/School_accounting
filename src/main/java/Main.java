@@ -5,7 +5,6 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.stage.StageStyle;
 
-
 public class Main extends Application {
     private double xOffset = 0;
     private double yOffset = 0;

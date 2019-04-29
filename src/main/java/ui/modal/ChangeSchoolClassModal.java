@@ -1,24 +1,26 @@
 package ui.modal;
 
 import data.entity.SchoolClass;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import ui.controllers.SchoolClassRedactorModalController;
 
 import java.io.IOException;
 
-public class ChangeSchoolClassModal implements ui.modal.IModal {
+public class ChangeSchoolClassModal implements IModal {
     private SchoolClass schoolClass;
-
-    //public ChangeSchoolClassModal(SchoolClass schoolClass) { this.schoolClass = schoolClass; }
 
     public ChangeSchoolClassModal(SchoolClass schoolClass) {
         this.schoolClass = schoolClass;
     }
 
-    public Stage showModal() {
+    @Override
+    public Stage showModal(Node node) {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource(
                         "/fxml/changeSchoolClassModal.fxml"
@@ -37,9 +39,12 @@ public class ChangeSchoolClassModal implements ui.modal.IModal {
                 loader.getController();
         controller.initData(schoolClass);
 
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(node.getScene().getWindow());
         stage.show();
 
         return stage;
     }
+
 
 }
