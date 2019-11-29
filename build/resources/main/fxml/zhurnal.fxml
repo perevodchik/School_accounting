@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<VBox fx:id="zhurnalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0"
+      prefWidth="1150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.controllers.ZhurnalController">
+    <HBox prefHeight="60.0" prefWidth="1150.0">
+        <padding>
+            <Insets bottom="5.0" left="50.0" right="50.0" top="5.0"/>
+        </padding>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Виберіть клас"/>
+            <JFXComboBox fx:id="classListView" onAction="#changeSchoolClass" prefHeight="25.0" prefWidth="150.0"/>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Виберіть предмет"/>
+            <JFXComboBox fx:id="disciplineListView" onAction="#changeDiscipline" prefHeight="25.0"
+                         prefWidth="150.0"/>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Виберіть місяць"/>
+            <JFXComboBox fx:id="monthListView" onAction="#changeMonth" prefHeight="25.0" prefWidth="150.0"/>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Класне"/>
+            <JFXCheckBox fx:id="ClassCB" onAction="#changeFilter" prefHeight="25.0"
+                         prefWidth="20.0" checkedColor="2D75E8" selected="true"/>
+            <Label text="ДЗ"/>
+            <JFXCheckBox fx:id="HomeCB" onAction="#changeFilter" prefHeight="25.0"
+                         prefWidth="20.0" checkedColor="2D75E8" selected="true"/>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Самостійні"/>
+            <JFXCheckBox fx:id="SelfCB" onAction="#changeFilter" prefHeight="25.0"
+                         prefWidth="20.0" checkedColor="2D75E8" selected="true"/>
+            <Label text="Контрольні"/>
+            <JFXCheckBox fx:id="ContrCB" onAction="#changeFilter" prefHeight="25.0"
+                         prefWidth="20.0" checkedColor="2D75E8" selected="true"/>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Хворів"/>
+            <JFXCheckBox fx:id="HealCB" onAction="#changeFilter" prefHeight="25.0"
+                         prefWidth="20.0" checkedColor="2D75E8" selected="true"/>
+            <Label text="Відсутній"/>
+            <JFXCheckBox fx:id="MissCB" onAction="#changeFilter" prefHeight="25.0"
+                         prefWidth="20.0" checkedColor="2D75E8" selected="true"/>
+        </VBox>
+        <!--
+        <VBox prefHeight="200.0" prefWidth="150.0">
+           <HBox.margin>
+              <Insets right="20.0"/>
+           </HBox.margin>
+           <Label text="Виберіть рік"/>
+           <JFXComboBox fx:id="yearListView" onAction="#changeYear" prefHeight="25.0" prefWidth="150.0"/>
+        </VBox>
+        -->
+    </HBox>
+    <TableView fx:id="tableView" prefHeight="675.0" prefWidth="1150.0" stylesheets="@../css/fullpackstyling.css">
+    </TableView>
+</VBox>

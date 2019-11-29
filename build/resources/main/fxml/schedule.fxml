@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="schedulePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0"
+      prefWidth="1150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.controllers.ScheduleController">
+    <HBox prefHeight="60.0" prefWidth="1150.0">
+        <padding>
+            <Insets bottom="5.0" left="50.0" right="50.0" top="5.0"/>
+        </padding>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <VBox prefHeight="200.0" prefWidth="150.0">
+            <HBox.margin>
+                <Insets right="20.0"/>
+            </HBox.margin>
+            <Label text="Виберіть клас"/>
+            <JFXComboBox fx:id="classListView" onAction="#changeSchoolClass" prefHeight="25.0"
+                         prefWidth="150.0"/>
+        </VBox>
+    </HBox>
+    <TableView fx:id="scheduleTable" layoutX="20.0" layoutY="192.0" prefHeight="675.0" prefWidth="1200.0" stylesheets="@../css/fullpackstyling.css">
+        <columns>
+            <TableColumn fx:id="columnNumber" prefWidth="30.0" text="№"/>
+            <TableColumn fx:id="monday" minWidth="100.0" prefWidth="160.0" text="Понеділок"/>
+            <TableColumn fx:id="tuesday" minWidth="100.0" prefWidth="160.0" text="Вівторок"/>
+            <TableColumn fx:id="wednesday" minWidth="100.0" prefWidth="160.0" text="Середа"/>
+            <TableColumn fx:id="thursday" minWidth="100.0" prefWidth="160.0" text="Четвер"/>
+            <TableColumn fx:id="friday" minWidth="100.0" prefWidth="160.0" text="Пятниця"/>
+            <TableColumn fx:id="saturday" minWidth="100.0" prefWidth="160.0" text="Субота"/>
+            <TableColumn fx:id="sunday" minWidth="100.0" prefWidth="160.0" text="Неділя"/>
+        </columns>
+    </TableView>
+</VBox>
