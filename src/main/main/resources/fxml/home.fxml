@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="parentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.controllers.MainController">
+    <Pane prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label layoutX="73.0" layoutY="30.0" text="Students" textFill="WHITE">
+            <font>
+                <Font size="48.0"/>
+            </font>
+        </Label>
+        <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1174.0" layoutY="2.0" onMouseClicked="#close"
+                   pickOnBounds="true" preserveRatio="true">
+            <Image url="@../img/close.png"/>
+        </ImageView>
+        <ImageView fitHeight="38.0" fitWidth="20.0" layoutX="4.0" layoutY="5.0" onMouseClicked="#goToMenu"
+                   pickOnBounds="true" preserveRatio="true">
+            <Image url="@../img/left.png"/>
+        </ImageView>
+    </Pane>
+</AnchorPane>

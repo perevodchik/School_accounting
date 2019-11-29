@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0"
+      prefWidth="1150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.controllers.SchoolClassController">
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <VBox prefHeight="98.0" prefWidth="120.0">
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+         </padding>
+         <JFXButton fx:id="addBtn" onAction="#handleButtonClicks" text="Додати">
+            <VBox.margin>
+            </VBox.margin>
+         </JFXButton>
+      </VBox>
+      <VBox prefHeight="98.0" prefWidth="120.0">
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+         </padding>
+         <JFXButton fx:id="removeBtn" onAction="#handleButtonClicks" text="Видалити">
+            <VBox.margin>
+            </VBox.margin>
+         </JFXButton>
+      </VBox>
+      <VBox prefHeight="98.0" prefWidth="120.0">
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+         </padding>
+         <JFXButton fx:id="changeBtn" onAction="#handleButtonClicks" prefHeight="25.0" prefWidth="100.0"
+                    text="Редагувати">
+            <VBox.margin>
+            </VBox.margin>
+         </JFXButton>
+      </VBox>
+   </HBox>
+   <HBox prefHeight="684.0" prefWidth="1150.0">
+      <TableView fx:id="schoolClassTable" prefHeight="100.0" prefWidth="300.0"
+                 stylesheets="@../css/fullpackstyling.css">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="75.0" text="id"/>
+            <TableColumn fx:id="nameCol" prefWidth="90.0" text="Назва класу"/>
+            <TableColumn fx:id="countCol" prefWidth="60.0" text="Учнів"/>
+         </columns>
+         <HBox.margin>
+            <Insets left="10.0" right="100.0"/>
+         </HBox.margin>
+      </TableView>
+      <JFXListView fx:id="allDisciplineList" prefHeight="682.0" prefWidth="250.0">
+         <HBox.margin>
+            <Insets left="50.0" right="100.0"/>
+         </HBox.margin>
+      </JFXListView>
+      <JFXListView fx:id="schoolClassDisciplineList" prefHeight="682.0" prefWidth="250.0"/>
+   </HBox>
+</VBox>
